@@ -1,0 +1,13 @@
+body {
+  --main-color: #fff579;
+  --secondary-color: #ff7b1a;
+  --tecondary-color: #434b3d;
+}
+
+.app h3 {
+  width: fit-content;
+}
+
+.app .fit_self {
+  width: fit-content;
+}

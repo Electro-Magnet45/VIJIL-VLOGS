@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.home__container {
+  height: 100vh;
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  font-family: "Montserrat", sans-serif;
+}
+
+.home1__landingSect {
+  display: flex;
+  height: inherit;
+  margin: 0 1rem 0 1rem;
+}
+
+.home1-cont1__titleSec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 60%;
+}
+
+.home1-cont1__titleSec h2 {
+  font-weight: bolder;
+  font-size: 3rem;
+  letter-spacing: 1.3px;
+  font-stretch: extra-condensed;
+}
+
+.home1-cont1__titleSec h2 span {
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+  color: var(--tecondary-color);
+}
+
+.home1-cont1__animeSec {
+  flex: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.home1-con1-landing1__animeContainer {
+  height: 20rem;
+  width: 20rem;
+  background: linear-gradient(135deg, #fc00ff, #00dbde);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+.home1-con1-landing1__animeContainer__inner {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translateZ(30px) translateX(-50%) translateY(-50%);
+  box-shadow: 0 0 50px 0 rgb(51 51 51 / 30%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  letter-spacing: normal;
+  height: fit-content;
+  width: fit-content;
+}
+
+.home1-con1-landing1__animeContainer__inner span {
+  background-color: white;
+  color: black;
+}
+
+.js-tilt-glare {
+  box-shadow: 0 20px 70px -10px rgb(51 51 51 / 70%),
+    0 50px 100px 0 rgb(51 51 51 / 20%);
+}
