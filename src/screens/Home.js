@@ -3,10 +3,12 @@ import "./css/Home.css";
 import VanillaTilt from "vanilla-tilt";
 
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const Home = () => {
   //
   const [isPreloader, setIsPreloader] = useState(true);
+  const [isPhone, setIsPhone] = useState(undefined);
 
   useEffect(() => {
     VanillaTilt.init(
@@ -18,11 +20,19 @@ const Home = () => {
     );
 
     var readyStateCheckInterval = setInterval(function () {
-      if (document.readyState === "complete") {
-        clearInterval(readyStateCheckInterval);
-        setTimeout(() => {
-          setIsPreloader(false);
-        }, 2000);
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        setIsPhone(true);
+      } else {
+        if (document.readyState === "complete") {
+          clearInterval(readyStateCheckInterval);
+          setTimeout(() => {
+            setIsPreloader(false);
+          }, 2000);
+        }
       }
     }, 10);
   }, []);
@@ -100,6 +110,11 @@ const Home = () => {
                 Vijil <span>Vlogs</span>
               </h3>
             </div>
+            {isPhone && (
+              <h1>
+                Sorry Mobile Site is <br /> Under Development{" "}
+              </h1>
+            )}
           </div>
         </div>
       )}
@@ -119,15 +134,44 @@ const Home = () => {
               </h1>
             </div>
           </div>
+
           <div className="home1__videoSec">
             <iframe
-              width="810"
-              height="455"
-              src="https://www.youtube.com/embed/c2zmqwlhNH0"
+              title="Latest Video"
+              src={"https://www.youtube.com/embed/c2zmqwlhNH0"}
             ></iframe>
+          </div>
+
+          <div className="home1__videoSec__divider">
+            <div className="home1__videoSec1__container"></div>
+          </div>
+
+          <div className="home1__restSection">
+            <div className="home1__cont2__videosDiv">
+              <div className="home1__cont3__videoContainer">
+                <div className="home1__cont4__newReleaseSec">
+                  <div className="home1__cont5__titleSec">
+                    <h2>New Release</h2>
+
+                    <div className="home1__cont5__videoSec">
+                      <div className="home1__cont5__video"></div>
+                      <div className="home1__cont5__video"></div>
+                      <div className="home1__cont5__video"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="home1__cont2__moreDiv">
+              <div className="home1__cont3__container">
+                <h3>Find Out Even More {"->"} </h3>
+              </div>
+            </div>
           </div>
         </div>
       )}
+      {!isPreloader && <Footer />}
     </div>
   );
 };
