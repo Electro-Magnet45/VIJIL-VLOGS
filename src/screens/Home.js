@@ -5,10 +5,15 @@ import VanillaTilt from "vanilla-tilt";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+import { useSelector } from "react-redux";
+
 const Home = () => {
   //
+
   const [isPreloader, setIsPreloader] = useState(true);
   const [isPhone, setIsPhone] = useState(undefined);
+
+  const videos = useSelector((state) => state.videos.videos);
 
   useEffect(() => {
     VanillaTilt.init(
@@ -38,8 +43,9 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
+    var landingSpanIntr;
     if (!isPreloader) {
-      setInterval(() => {
+      landingSpanIntr = setInterval(() => {
         if (
           document.getElementById("home1-cont-1-landing-1__span").innerText ===
           "Food"
@@ -92,6 +98,10 @@ const Home = () => {
         }
       }, 2000);
     }
+
+    return () => {
+      clearInterval(landingSpanIntr);
+    };
   }, [isPreloader]);
 
   return (
@@ -136,10 +146,7 @@ const Home = () => {
           </div>
 
           <div className="home1__videoSec">
-            <iframe
-              title="Latest Video"
-              src={"https://www.youtube.com/embed/c2zmqwlhNH0"}
-            ></iframe>
+            <iframe title="Latest Video" src={videos[0].link}></iframe>
           </div>
 
           <div className="home1__videoSec__divider">
@@ -147,17 +154,44 @@ const Home = () => {
           </div>
 
           <div className="home1__restSection">
-            <div className="home1__cont2__videosDiv">
-              <div className="home1__cont3__videoContainer">
-                <div className="home1__cont4__newReleaseSec">
-                  <div className="home1__cont5__titleSec">
-                    <h2>New Release</h2>
+            <div className="home1__restSec__foodDiv">
+              <div className="home1__restSec_1__container">
+                <div className="home1__restSec3__titleDiv">
+                  <h1>Food</h1>
+                </div>
 
-                    <div className="home1__cont5__videoSec">
-                      <div className="home1__cont5__video"></div>
-                      <div className="home1__cont5__video"></div>
-                      <div className="home1__cont5__video"></div>
-                    </div>
+                <div className="home1__restSec3__contentDiv">
+                  <div className="home1__restSec4__quote1">
+                    <blockquote>
+                      Food for us comes from our relatives, whether they have
+                      wings or fins or roots. That is how we consider food. Food
+                      has a culture. It has a history. It has a story. It has
+                      relationships.
+                      <span>Winona LaDuke</span>
+                    </blockquote>
+                  </div>
+
+                  <h3>
+                    We, at Vijil Vlogs, prepare food for <i>Happiness </i>,
+                    <i> Love</i>, <i>Care</i> and with <i>Passion</i>.
+                  </h3>
+
+                  <div className="home1__restSec4__quote2">
+                    <blockquote>
+                      So long as you have food in your mouth you have solved all
+                      questions for the time being.
+                      <span>Franz Kafka</span>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="home1__restSec2__travellingDiv">
+              <div className="home1__restSec_2__container">
+                <div className="home1__restSec2_1__container">
+                  <div className="home1__restSec2_3__titleDiv">
+                    <h1>Travelling</h1>
                   </div>
                 </div>
               </div>
