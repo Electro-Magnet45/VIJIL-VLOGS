@@ -4,6 +4,7 @@ import VanillaTilt from "vanilla-tilt";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import UnboxBox from "../components/UnboxBox";
 
 import { useSelector } from "react-redux";
 
@@ -33,10 +34,15 @@ const Home = () => {
         setIsPhone(true);
       } else {
         if (document.readyState === "complete") {
-          clearInterval(readyStateCheckInterval);
-          setTimeout(() => {
+          if (sessionStorage.getItem("preloaderStatus") !== "close") {
+            clearInterval(readyStateCheckInterval);
+            setTimeout(() => {
+              setIsPreloader(false);
+              sessionStorage.setItem("preloaderStatus", "close");
+            }, 2000);
+          } else {
             setIsPreloader(false);
-          }, 2000);
+          }
         }
       }
     }, 10);
@@ -135,7 +141,7 @@ const Home = () => {
           <div className="home1__landingSect">
             <div className="home1-cont-1__titleSec">
               <h3>
-                #1 QUICK <span id="home1-cont-1-landing-1__span">FOOD</span>{" "}
+                #1 QUICK <span id="home1-cont-1-landing-1__span">FOOD</span>
                 VIDEO CHANNEL
               </h3>
               <h1>
@@ -146,7 +152,7 @@ const Home = () => {
           </div>
 
           <div className="home1__videoSec">
-            <iframe title="Latest Video" src={videos[0].link}></iframe>
+            <iframe title="Latest Video" src={videos[0] && videos[0].link} />
           </div>
 
           <div className="home1__videoSec__divider">
@@ -173,7 +179,7 @@ const Home = () => {
 
                   <h3>
                     We, at Vijil Vlogs, prepare food for <i>Happiness </i>,
-                    <i> Love</i>, <i>Care</i> and with <i>Passion</i>.
+                    <i> Love</i>,<i> Care</i> and with <i>Passion</i>.
                   </h3>
 
                   <div className="home1__restSec4__quote2">
@@ -188,10 +194,49 @@ const Home = () => {
             </div>
 
             <div className="home1__restSec2__travellingDiv">
-              <div className="home1__restSec_2__container">
-                <div className="home1__restSec2_1__container">
-                  <div className="home1__restSec2_3__titleDiv">
-                    <h1>Travelling</h1>
+              <div className="home1__restSec2_1__container">
+                <div className="home1__restSec2_3__titleDiv">
+                  <h1>Travelling</h1>
+                </div>
+
+                <div className="home1__restSec2_3__contentDiv">
+                  <div className="home1__restSec2_4__quote1">
+                    <blockquote>
+                      Jobs fill your pockets, adventures fill your soul.
+                    </blockquote>
+                  </div>
+
+                  <h3>
+                    We, still, at Vijil Vlogs, introduce new places for
+                    <i> Happiness </i>,<i> Love</i>,<i> Care</i> and with
+                    <i> Passion</i>.
+                  </h3>
+
+                  <div className="home1__restSec2_4__quote2">
+                    <blockquote>
+                      The world is a book and those who do not travel read only
+                      one page
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="home1__restSec2__unBoxingDiv">
+              <div className="home1__restSec2_2__contaier">
+                <div className="home1__restSec2_2__titleDiv">
+                  <h1>Unboxing</h1>
+                </div>
+
+                <div className="home1__restSec2_2_3__contentDiv">
+                  <h3>
+                    We, much still, at Vijil Vlogs, power new products for
+                    <i> Happiness </i>,<i> Love</i>,<i> Care</i> and with
+                    <i> Passion</i>.
+                  </h3>
+
+                  <div className="home1__restSec2_4__unBox">
+                    <UnboxBox />
                   </div>
                 </div>
               </div>

@@ -171,7 +171,7 @@
   margin: 0 1rem 0 0;
 }
 
-.home1__restSec3__contentDiv blockquote {
+.home1__restSection blockquote {
   font-size: 1.4em;
   width: 30rem;
   margin: 1rem 0 0 1rem;
@@ -183,7 +183,7 @@
   position: relative;
 }
 
-.home1__restSec3__contentDiv blockquote::before {
+.home1__restSection blockquote::before {
   font-family: Arial;
   content: "\201C";
   color: aquamarine;
@@ -193,7 +193,7 @@
   top: -10px;
 }
 
-.home1__restSec3__contentDiv blockquote span {
+.home1__restSection blockquote span {
   display: block;
   color: #333333;
   font-style: normal;
@@ -201,7 +201,7 @@
   margin-top: 1em;
 }
 
-.home1__restSec3__contentDiv h3 {
+.home1__restSection h3 {
   font-family: "Poppins", sans-serif;
   font-weight: normal;
   margin: 3rem 0 3rem 75px;
@@ -212,32 +212,68 @@
   margin-left: auto;
 }
 
+.home1__restSec2_1__container {
+  padding: 1rem 0 1rem 1rem;
+  background-color: var(--siecondary-color);
+  color: white;
+  transition: all ease 1s;
+  margin: 1rem 0 1rem 0;
+}
+.home1__restSec2_1__container ::selection {
+  background-color: white;
+  color: var(--siecondary-color);
+}
+
 .home1__restSec2_3__titleDiv {
   margin: 0 1rem 0 0;
 }
 
-/**/
+.home1__restSec2_4__quote1 {
+  width: fit-content;
+  margin-left: auto;
+}
 
-.home1__restSec_2__container {
+.home1__restSec2_3__contentDiv {
+  padding: 6rem 0 6rem 0;
+}
+
+.home1__restSec2_4__quote1 {
+  margin-top: 0 !important;
+}
+
+.home1__restSec2_2__contaier {
   padding: 1rem 0 1rem 1rem;
   background-color: var(--fiecondary-color);
   color: white;
   transition: all ease 1s;
-  height: 10rem;
-  margin: 1rem 0 1rem 0;
+  margin: 1rem 0 0 0;
+  padding-bottom: 5rem;
 }
-.home1__restSec_2__container ::selection {
+.home1__restSec2_2__contaier ::selection {
   background-color: white;
   color: var(--fiecondary-color);
 }
 
+.home1__restSec2_2__titleDiv {
+  text-align: center;
+}
+
+.home1__restSec2_2_3__contentDiv h3 {
+  margin: 3rem 0 3rem 0;
+  text-align: center;
+  width: auto;
+}
+
 /**/
+
+.home1__cont2__moreDiv {
+  height: 5rem;
+}
 
 .home1__cont3__container {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 4rem 2rem 4rem;
   color: black;
   font-family: lulo-clean-w01-one-bold, sans-serif;
 }
