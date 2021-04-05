@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./css/VideosScreen.css";
 
 import Header from "../components/Header";
@@ -40,10 +40,6 @@ const VideosScreen = () => {
   const querySkip = useSelector((state) => state.query.skip);
 
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    console.log(videos);
-  }, [videos]);
 
   return (
     <div className="videosScreen">
