@@ -89,6 +89,9 @@
   font-family: Open Sans;
   margin: 1rem 3rem 1rem 1rem;
 }
+.videoItem:hover {
+  cursor: pointer;
+}
 .videoItem ::selection {
   background-color: black;
   color: white;

@@ -4,8 +4,9 @@ import "./App.css";
 import ScrollToTop from "./ScrollToTop";
 import Home from "./screens/Home";
 import VideosScreen from "./screens/VideosScreen";
+import VideoItemScreen from "./screens/VideoItemScreen";
 
-import fetchAllVideos from "./fetch";
+import { fetchAllVideos } from "./fetch";
 
 import { useSelector, useDispatch } from "react-redux";
 import { increment } from "./redux/videosSlice";
@@ -40,8 +41,12 @@ function App() {
             <Home />
           </Route>
 
-          <Route path="/all-videos">
+          <Route path="/videos/all">
             <VideosScreen />
+          </Route>
+
+          <Route path="/video/:id">
+            <VideoItemScreen />
           </Route>
         </Switch>
       </Router>

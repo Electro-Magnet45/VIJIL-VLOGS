@@ -7,9 +7,15 @@ import Footer from "../components/Footer";
 import { useSelector, useDispatch } from "react-redux";
 import { querySkipIncrement } from "../redux/querySlice";
 
-const VideoItem = ({ name, link }) => {
+import { Helmet } from "react-helmet";
+import { useHistory } from "react-router-dom";
+
+const VideoItem = ({ _id, name, link }) => {
+  //
+  var history = useHistory();
+
   return (
-    <div className="videoItem">
+    <div className="videoItem" onClick={() => history.push(`/video/${_id}`)}>
       <div className="videoItem__header">
         <h2>{name}</h2>
       </div>
@@ -41,6 +47,10 @@ const VideosScreen = () => {
 
   return (
     <div className="videosScreen">
+      <Helmet>
+        <title>All Videos | Vijil-Vlogs</title>
+      </Helmet>
+
       <Header />
 
       <div className="videosScreen__container">
@@ -78,6 +88,7 @@ const VideosScreen = () => {
                   return (
                     <VideoItem
                       key={video.id}
+                      _id={video._id}
                       name={video.name}
                       link={video.link}
                     />

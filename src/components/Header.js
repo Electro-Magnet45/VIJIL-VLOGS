@@ -18,7 +18,9 @@ const Header = () => {
         <div className="header-1__navBar">
           <div className="header-1-nav__container fit_self">
             <ul>
-              <li>Home</li>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
             </ul>
           </div>
         </div>

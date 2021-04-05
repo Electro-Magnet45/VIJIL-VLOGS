@@ -1,6 +1,6 @@
 import axios from "./axios";
 
-export default function fetchAllVideos(skip) {
+function fetchAllVideos(skip) {
   return axios
     .post("/api/videos/all", {
       skip: skip,
@@ -9,3 +9,15 @@ export default function fetchAllVideos(skip) {
       return response.data;
     });
 }
+
+function fetchById(itemId) {
+  return axios
+    .post("/api/videos/id", {
+      itemId: itemId,
+    })
+    .then((response) => {
+      return response.data;
+    });
+}
+
+export { fetchAllVideos, fetchById };

@@ -9,6 +9,7 @@ import UnboxBox from "../components/UnboxBox";
 import { useSelector } from "react-redux";
 
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Home = () => {
   //
@@ -120,6 +121,9 @@ const Home = () => {
 
   return (
     <div className="home">
+      <Helmet>
+        <title>Vijil-Vlogs</title>
+      </Helmet>
       {isPreloader && (
         <div className="home__preloader">
           <div className="home-1__container">
@@ -257,7 +261,7 @@ const Home = () => {
             <div className="home1__cont2__moreDiv">
               <div className="home1__cont3__container">
                 <h3>
-                  <Link to="/all-videos">Find Out Even More {"->"}</Link>
+                  <Link to="/videos/all">Find Out Even More {"->"}</Link>
                 </h3>
               </div>
             </div>
