@@ -7,7 +7,14 @@ export const videosSlice = createSlice({
   },
   reducers: {
     increment: (state, action) => {
-      state.videos = action.payload;
+      if (state.videos[0]) {
+        const oldArray = state.videos;
+        const newArray = action.payload;
+
+        state.videos = oldArray.concat(newArray);
+      } else {
+        state.videos = action.payload;
+      }
     },
   },
 });

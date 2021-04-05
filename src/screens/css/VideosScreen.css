@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400&display=swap");
+
+.videosScreen_1__landingSec {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 0.12rem;
+  padding: 5rem 0 1rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.videosScreen_1__landingSec ::selection {
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+}
+
+.videosScreen_1__landingSec button {
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+.videosScreen_1_1__linksSection {
+  max-width: 39rem;
+  margin: 0 1rem 0 3rem;
+}
+
+.videosScreen_1_1__linksSection button {
+  background-color: transparent;
+  border-bottom: 2px solid var(--secondary-color) !important;
+  outline: none;
+  color: var(--secondary-color);
+  margin: 0.5rem 1rem 0 0;
+  min-width: 6.2rem;
+}
+
+.videosScreen_1_1__loadMoreSec button {
+  background-color: var(--secondary-color);
+  color: var(--main-color);
+  border-radius: 1.2rem;
+  padding: 0.5rem;
+}
+.videosScreen_1_1__loadMoreSec button:hover {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.videosScreen_1__divider {
+  height: 1px;
+  margin: 1rem 4.1rem 1rem 4.1rem;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+.videosScreen_1__exploreSec {
+  margin: 2.5rem 4.1rem 1rem 4.1rem;
+}
+.videosScreen_1__exploreSec ::selection {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.videosScreen_1__exploreSec h3 {
+  color: var(--secondary-color);
+  font-family: Open Sans;
+  font-size: 1.5rem;
+  letter-spacing: 0.12rem;
+}
+
+.videosScreen_1_2__videosSec {
+  margin: 1rem 0 1rem 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/*================= Video Item ================ */
+
+.videoItem {
+  display: flex;
+  flex-direction: column;
+  font-family: Open Sans;
+  margin: 1rem 3rem 1rem 1rem;
+}
+.videoItem ::selection {
+  background-color: black;
+  color: white;
+}
+
+.videoItem__header {
+  text-shadow: 1px 1px 3px #000000;
+  letter-spacing: 0.2rem;
+  font-size: 1.5rem;
+  overflow-wrap: break-word;
+}
+
+.videoItem__header h2 {
+  max-width: 25rem;
+  font-weight: 600;
+}
+
+.videoItem_2__video {
+  margin: 1rem 0 0 0;
+  height: 14rem;
+  width: 24.8rem;
+  background-color: gray;
+}
+
+.videoItem__divider {
+  height: 1px;
+  margin: 1rem 0 0 0;
+  border-bottom: 4px dotted var(--fiecondary-color);
+}
+
+.videosScreen_1_2__moreButton {
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.videosScreen_1_2__moreButton button {
+  background-color: white;
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+  outline: none;
+  font-size: 1.3rem;
+  padding: 0.5rem 1rem;
+}
+.videosScreen_1_2__moreButton button:hover {
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+/**/
+
+.videosScreen__divider {
+  height: 5.5rem;
+}

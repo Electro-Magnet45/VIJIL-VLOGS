@@ -8,8 +8,14 @@ import UnboxBox from "../components/UnboxBox";
 
 import { useSelector } from "react-redux";
 
+import { Link } from "react-router-dom";
+
 const Home = () => {
   //
+  var landingSpanIntr;
+  var timeout1;
+  var timeout2;
+  var timeout3;
 
   const [isPreloader, setIsPreloader] = useState(true);
   const [isPhone, setIsPhone] = useState(undefined);
@@ -49,7 +55,6 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    var landingSpanIntr;
     if (!isPreloader) {
       landingSpanIntr = setInterval(() => {
         if (
@@ -59,7 +64,7 @@ const Home = () => {
           document.getElementById(
             "home1-cont-1-landing-1__span"
           ).style.opacity = "0";
-          setTimeout(() => {
+          timeout1 = setTimeout(() => {
             document.getElementById("home1-cont-1-landing-1__span").innerText =
               "Travelling";
             document.getElementById(
@@ -74,7 +79,7 @@ const Home = () => {
             document.getElementById(
               "home1-cont-1-landing-1__span"
             ).style.opacity = "0";
-            setTimeout(() => {
+            timeout2 = setTimeout(() => {
               document.getElementById(
                 "home1-cont-1-landing-1__span"
               ).innerText = "Unboxing";
@@ -91,7 +96,7 @@ const Home = () => {
               document.getElementById(
                 "home1-cont-1-landing-1__span"
               ).style.opacity = "0";
-              setTimeout(() => {
+              timeout3 = setTimeout(() => {
                 document.getElementById(
                   "home1-cont-1-landing-1__span"
                 ).innerText = "Food";
@@ -107,6 +112,9 @@ const Home = () => {
 
     return () => {
       clearInterval(landingSpanIntr);
+      clearTimeout(timeout1);
+      clearTimeout(timeout2);
+      clearTimeout(timeout3);
     };
   }, [isPreloader]);
 
@@ -128,7 +136,7 @@ const Home = () => {
             </div>
             {isPhone && (
               <h1>
-                Sorry Mobile Site is <br /> Under Development{" "}
+                Sorry Mobile Site is <br /> Under Development
               </h1>
             )}
           </div>
@@ -152,7 +160,11 @@ const Home = () => {
           </div>
 
           <div className="home1__videoSec">
-            <iframe title="Latest Video" src={videos[0] && videos[0].link} />
+            <iframe
+              title="Latest Video"
+              src={videos[0] && videos[0].link}
+              loading="lazy"
+            />
           </div>
 
           <div className="home1__videoSec__divider">
@@ -244,7 +256,9 @@ const Home = () => {
 
             <div className="home1__cont2__moreDiv">
               <div className="home1__cont3__container">
-                <h3>Find Out Even More {"->"} </h3>
+                <h3>
+                  <Link to="/all-videos">Find Out Even More {"->"}</Link>
+                </h3>
               </div>
             </div>
           </div>

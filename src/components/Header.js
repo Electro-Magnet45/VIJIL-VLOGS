@@ -1,13 +1,17 @@
 import React from "react";
 import "./Header.css";
 
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <div className="header">
       <div className="header__container">
         <div className="header-1__logoSection">
           <h3>
-            Vijil <span>Vlogs</span>
+            <Link to="/">
+              Vijil <span>Vlogs</span>
+            </Link>
           </h3>
         </div>
 
