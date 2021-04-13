@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "https://vijil-vlogs-server.herokuapp.com",
+  baseURL: process.env.REACT_APP_SERVER_URL,
 });
 
 export default instance;
